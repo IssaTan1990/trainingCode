@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>3-13</title>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <style>
+        body{ padding: 50px 0; }
+        .tab-content .tab-pane{ padding-top: 10px; }
+    </style>
+</head>
+
+<body>
+	<div class="container">
+        <div role="tabpanel">
+            <ul class="nav nav-tabs" role="tablist">
+               <li role="presentation">
+                   <a href="#tab-1" aria-controls="tab-1" role="tab" data-toggle="tab">第一项</a>
+               </li>
+               <li role="presentation">
+                   <a href="#tab-2" aria-controls="tab-2" role="tab" data-toggle="tab">第二项</a>
+               </li>
+               <li role="presentation">
+                   <a href="#tab-3" aria-controls="tab-3" role="tab" data-toggle="tab">第三项</a>
+               </li>
+               <li role="presentation">
+                    <a href="#tab-4" aria-controls="tab-4" role="tab" data-toggle="tab">第四项</a>
+               </li>
+            </ul>
+            <div class="tab-content">
+                <div id="tab-1" class="tab-pane" role="tabpanel">
+                    <p>慕课网是做什么的？</p>
+                    <p>互联网技能教育，免费的哦</p>
+                </div>
+                <div id="tab-2" class="tab-pane" role="tabpanel">
+                    <p>慕课网是做什么的？</p>
+                    <p>互联网技能教育，免费的哦</p>
+                </div>
+                <div id="tab-3" class="tab-pane" role="tabpanel">
+                    <p>慕课网是做什么的？</p>
+                    <p>互联网技能教育，免费的哦</p>
+                </div>
+                <div id="tab-4" class="tab-pane" role="tabpanel">
+                    <p>慕课网是做什么的？</p>
+                    <p>互联网技能教育，免费的哦</p>
+                </div>
+            </div>
+        </div>   
+    </div>
+
+    <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.nav-tabs a[href=#tab-2]').tab('show');
+        });
+    </script>
+</body>
+
+</html>
