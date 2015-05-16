@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Untitled Document</title>
+    
+</head>
+<body>
+    <script type="text/javascript">   
+        /*
+         * param1 Array 
+         * param2 Array
+         * return true or false
+         */
+        function arraysSimilar(arr1, arr2){
+            //非数组、长度不一致，不相似
+            if(!Array.isArray(arr1) || !Array.isArray(arr2) || arr1.length!=arr2.length) {return false;}
+            var len = arr1.length,
+                type1 = [],
+                type2 = [];
+            if(len){
+                for(var i=0;i<len;i++){
+                    //遍历 数组1 和 数组2，组建各自的 成员类型 数组 type1 和 type2
+                    type1.push(getType(arr1[i]));
+                    type2.push(getType(arr2[i]));
+                }
+                //对 成员类型 数组进行排序，并转换为String，判断是否相等
+                if(type1.sort().join() === type2.sort().join()){
+                    return true;
+                }else{
+                    return false;
+                }
+            }else{
+                //空数组相似
+                return true;
+            }
+        }
+
+        /*
+         * 判断类型
+         * param item 
+         * return type
+         */
+        function getType(item){
+            var type = "";
+            if(item === null){
+                type = "null";
+            }else if(item === window){
+                type = "window";
+            }else if(item instanceof Date){
+                type = "date";
+            }else{
+                //基本类型 string, boolean, number, undefined, function
+                type = typeof(item);
+            }
+            return type;
+        }
+    </script>
+    <script src="js/testData.js"></script>
+</body>
+</html>
